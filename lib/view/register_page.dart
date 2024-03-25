@@ -23,7 +23,7 @@ class RegisterPage extends StatelessWidget {
                 color: Theme.of(context).colorScheme.inversePrimary,
               ),
               SizedBox(
-                height: 25,
+                height: 24,
               ),
               Text('Food Delivery App',
                   style: TextStyle(
