@@ -18,7 +18,7 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 25,),
             Text('Food Delivery App',
-            style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary,fontWeight: FontWeight.bold,fontSize: 15),
+            style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary,fontWeight: FontWeight.bold,fontSize: 15,
             )
           ],
         ),
