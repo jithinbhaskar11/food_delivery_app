@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/components/my_drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,6 +11,7 @@ class HomePage extends StatelessWidget {
         title: Text('Home',style: TextStyle(color: Theme.of(context).colorScheme.primary),),
         centerTitle: true,
       ),
+      drawer: MyDrawer()
     );
   }
 }
