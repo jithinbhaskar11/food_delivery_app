@@ -20,7 +20,7 @@ class MySliverAppBar extends StatelessWidget {
       actions: [
         IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart))
       ],
-      title: Text('Oregano'),
+      title: Text('Oregano Restaurant'),
       flexibleSpace: FlexibleSpaceBar(
         title: title,
         background: Padding(
