@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
+
 import 'food_model.dart';
 
-class Restaurant {
-  final List<Food>menu = [
+class Restaurant extends ChangeNotifier {
+  final List<Food>_menu = [
 
   ///burgers
   Food(
@@ -289,4 +291,15 @@ class Restaurant {
   ]
   )
   ];
+
+
+  ///getters
+
+List<Food> get menu =>_menu;
+
+
+///operations
+
+//add to cart
+
 }
