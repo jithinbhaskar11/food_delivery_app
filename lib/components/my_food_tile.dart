@@ -21,6 +21,7 @@ class MyFoodTile extends StatelessWidget {
     return Column(
       children: [
         GestureDetector(
+          onTap: ontap,
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Row(
