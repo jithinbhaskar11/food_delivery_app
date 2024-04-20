@@ -42,7 +42,7 @@ class _FoodPageState extends State<FoodPage> {
                     height: 10,
                   ),
                   Text(
-                    widget.food.price,
+                    '₹${widget.food.price}',
                     style:
                         TextStyle(color: Theme.of(context).colorScheme.primary,fontWeight: FontWeight.bold),
                   ),
@@ -83,7 +83,7 @@ class _FoodPageState extends State<FoodPage> {
                             });
                           },
                           title: Text(addon.name),
-                          subtitle: Text(addon.price),
+                          subtitle: Text('₹${addon.price}'),
                         );
                       },
                     ),

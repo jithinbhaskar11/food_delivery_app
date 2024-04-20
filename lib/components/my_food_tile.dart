@@ -30,7 +30,7 @@ class MyFoodTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(food.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,),),
-                    Text(food.price.toString(),style: TextStyle(fontWeight: FontWeight.bold,),),
+                    Text('₹${food.price}',style: TextStyle(fontWeight: FontWeight.bold,),),
                     SizedBox(height: 10,),
                     Text(food.description,style: TextStyle(fontSize: 10,color: Theme.of(context).colorScheme.inversePrimary),)
                   ],
