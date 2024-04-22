@@ -2,7 +2,7 @@ class Food{
   final String name;
   final String description;
   final String imagePath;
-  final int price;
+  final double price;
   final FoodCategory category;
   List<Addon>addons;
   Food({
@@ -25,7 +25,7 @@ enum FoodCategory{
 
 class Addon{
   String name;
-  int price;
+  double price;
 
   Addon({
     required this.name,

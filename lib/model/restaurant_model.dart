@@ -338,6 +338,41 @@ void  removeFromCart(CartModel cartModel){
   }else{
     cart.removeAt(cartIndex);
   }
+  notifyListeners();
 }
+
+///calculate price
+double getTotalPrice(){
+  double total=0.0;
+
+  for (CartModel cartModel in cart){
+    double itemTotal=cartModel.food.price;
+
+    for (Addon addon in cartModel.selectedAddons){
+    }
+    itemTotal += itemTotal*cartModel.qty;
+  }
+  return total;
+}
+
+///total count odf items
+int getTotalItemCount(){
+  int totalItemCount=0;
+
+  for (CartModel cartModel in cart){
+    totalItemCount+=cartModel.qty;
+  }
+  return totalItemCount;
+}
+
+///clear cart
+void clearCart(){
+  cart.clear();
+  notifyListeners();
+}
+
+
+
+
 
 }
