@@ -298,7 +298,7 @@ class Restaurant extends ChangeNotifier {
   ///getters
 
 List<Food> get menu =>_menu;
-
+List<CartModel> get cartlist=>cart;
 
 ///operations
 //user cart

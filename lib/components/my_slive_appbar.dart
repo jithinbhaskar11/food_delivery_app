@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/view/cart_page.dart';
 
 class MySliverAppBar extends StatelessWidget {
   final Widget title;
@@ -18,7 +19,9 @@ class MySliverAppBar extends StatelessWidget {
       pinned: true,
       centerTitle: true,
       actions: [
-        IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart))
+        IconButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage()));
+        }, icon: Icon(Icons.shopping_cart))
       ],
       title: Text('Oregano Restaurant'),
       flexibleSpace: FlexibleSpaceBar(
