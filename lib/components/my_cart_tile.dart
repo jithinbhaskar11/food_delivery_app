@@ -51,19 +51,36 @@ class MyCartTile extends StatelessWidget {
               ),
             ),
             //addons
-            SizedBox(
-              height: cartModel.selectedAddons.isEmpty ? 0 : 60,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: cartModel.selectedAddons.map((addon) =>
-                FilterChip(label: Row(
-                  children: [
-                    Text(addon.name),
-                    Text(addon.price.toString())
-                  ],
+            Padding(
+              padding: const EdgeInsets.only(left: 10,bottom: 10,right: 10),
+              child: SizedBox(
+                height: cartModel.selectedAddons.isEmpty ? 0 : 60,
+               // height: 60,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: cartModel.selectedAddons.map((addon) =>
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: FilterChip(label: Row(
+                      children: [
+                        Text(addon.name),
+                        SizedBox(width: 5,),
+                        Text('(₹${addon.price})')
+                      ],
+                    ),
+                        onSelected: (value){},
+                    backgroundColor: Theme.of(context).colorScheme.secondary,
+                      labelStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                        fontSize: 10,
+                      ),
+                      side: BorderSide(
+                        color: Theme.of(context).colorScheme.primary
+                      ),
+                    ),
+                  )
+                  ).toList()
                 ),
-                    onSelected: (value){})
-                ).toList()
               ),
             )
           ],

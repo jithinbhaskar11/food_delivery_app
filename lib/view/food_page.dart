@@ -91,10 +91,10 @@ class _FoodPageState extends State<FoodPage> {
                         Addon addon = widget.food.addons[index];
 
                         return CheckboxListTile(
-                          value: selectedAddons[addon] ?? false ,
+                          value: widget.selectedAddons[addon] ,
                           onChanged: (bool? value) {
                             setState(() {
-                              selectedAddons[addon]=value ?? false;
+                             widget.selectedAddons[addon]=value!;
                             });
                           },
                           title: Text(addon.name),
