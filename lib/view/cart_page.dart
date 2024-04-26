@@ -41,13 +41,14 @@ class CartPage extends StatelessWidget {
             ],
           ),
 
-          body: Column(
+          body: userCart.isEmpty ? Center(
+            child: Icon(Icons.fastfood_outlined,size: 100,color: Theme.of(context).colorScheme.primary,),
+          )
+              :
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              userCart.isEmpty ? Center(
-                child: Icon(Icons.fastfood_outlined,size: 100,color: Theme.of(context).colorScheme.primary,),
-              )
-              :
+
               Expanded(child: ListView.builder(
                 itemCount: userCart.length,
                 itemBuilder: (context, index) {

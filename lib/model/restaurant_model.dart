@@ -1,5 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import 'cart_model.dart';
 import 'food_model.dart';
@@ -371,6 +372,28 @@ void clearCart(){
   notifyListeners();
 }
 
+///helpers
+//generate receipt
+String displayReceipt(){
+  final receipt=StringBuffer();
+  receipt.writeln('Here is your receipt');
+  receipt.writeln();
+
+  //time
+  String formatDate=DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.now());
+
+  ///*********///////
+}
+
+//format double value into mmoney
+String formatPrice(double price){
+  return  "\₹${price.toStringAsFixed(2)}";
+}
+
+//format list of addons into summary
+String formatAddons(List<Addon>addons){
+  return addons.map((addon) => "${addon.name} (${formatPrice(addon.price)})").join(",");
+}
 
 
 
