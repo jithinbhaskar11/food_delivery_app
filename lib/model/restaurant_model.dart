@@ -350,8 +350,9 @@ double getTotalPrice(){
     double itemTotal=cartModel.food.price;
 
     for (Addon addon in cartModel.selectedAddons){
+      itemTotal += addon.price;
     }
-    itemTotal += itemTotal*cartModel.qty;
+    total += itemTotal * cartModel.qty;
   }
   return total;
 }
@@ -381,11 +382,28 @@ String displayReceipt(){
 
   //time
   String formatDate=DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.now());
+  receipt.writeln();
+  receipt.writeln('----------');
 
-  ///*********///////
+  for(final cartItem in cart){
+    receipt.writeln(
+      "${cartItem.qty} x ${cartItem.food.name} - ${formatPrice(cartItem.food.price)}"
+    );
+
+    if(cartItem.selectedAddons.isNotEmpty){
+      receipt.writeln("Add-ons: ${formatAddons(cartItem.selectedAddons)}");
+    }
+    receipt.writeln();
+  }
+  receipt.writeln('----------');
+  receipt.writeln();
+  receipt.writeln('Total Items: ${getTotalItemCount()}');
+  receipt.writeln('Total Price: ${formatPrice(getTotalPrice())}');
+
+  return receipt.toString();
 }
 
-//format double value into mmoney
+//format double value into   money
 String formatPrice(double price){
   return  "\₹${price.toStringAsFixed(2)}";
 }
